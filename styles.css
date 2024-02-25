@@ -11,11 +11,53 @@
   }
   
   .card {
-    border: 1px solid #ccc;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 300px;
+    height: 300px;
+    background-color: #d1cccc;
+    border-radius: 10px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
     padding: 20px;
-    margin: 10px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    margin-left: 20px;
+    margin-right: 20px;
+  }
+  
+  h2 {
+    font-family: 'Arial', sans-serif;
+    font-size: 24px;
+    font-weight: bold;
+    color: #369;
     margin-bottom: 10px;
+  }
+  
+  .learn-more {
+    background-color: #369;
+    color: #ffffff;
+    font-family: 'Arial', sans-serif;
+    font-size: 16px;
+    font-weight: bold;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  .learn-more:hover {
+    background-color: #369;
+  }
+  
 
+  
+  .card p {
+    font-family: 'Arial', sans-serif;
+    font-size: 14px;
+    color: #666666;
+    line-height: 1.5;
   }
   
   .popup-container {
@@ -49,10 +91,36 @@
     margin-bottom: 20px;
     background-color: white; /* Set initial background color to white */
     color: black; /* Set initial text color to black */
-
-
-
+    position: relative;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 80%;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+    transition: opacity 0.3s ease, transform 0.3s ease;
   }
+
+
+  .additional-read-more {
+    background-color: #369;
+    color: #ffffff;
+    font-family: 'Arial', sans-serif;
+    font-size: 16px;
+    font-weight: bold;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  .additional-read-more:hover {
+    background-color: #369;
+  }
+
+
+
 
 .popup-card:hover,
 .popup-card:focus {
@@ -70,16 +138,42 @@
   color: white; /* Change color to white on hover or focus */
 }
 /* Styles for close button */
-.close-btn {
-  position: absolute;
+.close-button {
+  width: 35px;
+  height: 35px;
+  
+  border-radius: 10px;
+  background: #369;
+  position: fixed;
   top: 10px;
   right: 10px;
-  background: #ccc;
-  padding: 5px 10px;
-  border: none;
-  cursor: pointer;
+  display: block;
+  z-index: 200;
+  text-indent: -9999px;
 }
-  
+
+.close-button::before,
+.close-button::after {
+  content: '';
+  width: 55%;
+  height: 2px;
+  background: #fff;
+  position: absolute;
+  top: 48%;
+  left: 22%;
+  transform: rotate(-45deg);
+  transition: 0.3s;
+}
+
+.close-button::after {
+  transform: rotate(45deg);
+  transition: 0.3s;
+}
+
+.close-button:hover::before,
+.close-button:hover::after {
+  transform: rotate(180deg);
+}
 .additional-card {
     width: 400px;
     height:auto;

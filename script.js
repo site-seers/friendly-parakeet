@@ -1,6 +1,6 @@
 // Get elements
 const popupContainers = document.querySelectorAll('.popup-container');
-const closeButtons = document.querySelectorAll('.close-btn');
+const closeButtons = document.querySelectorAll('.close-button');
 const learnMoreButtons = document.querySelectorAll('.learn-more');
 const additionalReadMoreButtons = document.querySelectorAll('.additional-read-more');
 const moreTexts = document.querySelectorAll('.more-text');
@@ -15,7 +15,9 @@ learnMoreButtons.forEach((button, index) => {
 
 // Add event listener to close button
 closeButtons.forEach((button, index) => {
-  button.addEventListener('click', () => {
+  button.addEventListener('click', (event) => {
+    event.preventDefault(); // Prevent the default behavior of the close button
+    event.stopPropagation(); // Prevent the click event from propagating
     // Hide the corresponding popup container
     popupContainers[index].style.display = 'none';
   });
